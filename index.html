@@ -8,20 +8,21 @@
       :root {
         --bg: #07111f;
         --bg-soft: #0d1b2a;
-        --panel: rgba(18, 31, 47, 0.85);
+        --panel: rgba(18, 31, 47, 0.9);
         --panel-strong: #122235;
         --primary: #7c9cff;
         --primary-2: #8ef0d7;
+        --primary-3: #9dd8ff;
         --text: #ebf3ff;
         --muted: #a9bbd1;
         --line: rgba(255,255,255,0.08);
         --shadow: 0 20px 50px rgba(17, 30, 45, 0.45);
+        --green: #7ef0c8;
+        --purple: #8b7dff;
       }
 
       * { box-sizing: border-box; }
-
       html { scroll-behavior: smooth; }
-
       body {
         margin: 0;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -31,9 +32,8 @@
           var(--bg);
         color: var(--text);
       }
-
       a { color: inherit; text-decoration: none; }
-
+      img { max-width: 100%; display: block; }
       .container {
         width: min(1120px, calc(100% - 32px));
         margin: 0 auto;
@@ -44,17 +44,15 @@
         top: 0;
         z-index: 10;
         backdrop-filter: blur(14px);
-        background: rgba(7, 17, 31, 0.7);
+        background: rgba(7, 17, 31, 0.72);
         border-bottom: 1px solid var(--line);
       }
-
       .topbar-inner {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        min-height: 74px;
+        min-height: 72px;
       }
-
       .brand {
         display: inline-flex;
         align-items: center;
@@ -62,7 +60,6 @@
         font-weight: 700;
         letter-spacing: 0.04em;
       }
-
       .brand-mark {
         width: 38px;
         height: 38px;
@@ -74,7 +71,6 @@
         font-size: 1.1rem;
         box-shadow: var(--shadow);
       }
-
       .nav {
         display: flex;
         align-items: center;
@@ -82,9 +78,7 @@
         color: var(--muted);
         font-size: 0.95rem;
       }
-
       .nav a:hover { color: var(--text); }
-
       .btn {
         display: inline-flex;
         align-items: center;
@@ -96,34 +90,25 @@
         font-weight: 700;
         transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
       }
-
-      .btn:hover {
-        transform: translateY(-2px);
-      }
-
+      .btn:hover { transform: translateY(-2px); }
       .btn-primary {
-        background: linear-gradient(135deg, var(--primary), #9d7bff);
+        background: linear-gradient(135deg, var(--primary), var(--purple));
         color: #09131c;
         box-shadow: 0 12px 28px rgba(124,156,255,0.35);
       }
-
       .btn-secondary {
         background: rgba(255,255,255,0.02);
         border-color: var(--line);
         color: var(--text);
       }
 
-      .hero {
-        padding: 72px 0 42px;
-      }
-
+      .hero { padding: 72px 0 42px; }
       .hero-grid {
         display: grid;
         grid-template-columns: 1.1fr 0.9fr;
         gap: 48px;
         align-items: center;
       }
-
       .eyebrow {
         display: inline-flex;
         align-items: center;
@@ -137,21 +122,18 @@
         letter-spacing: 0.08em;
         text-transform: uppercase;
       }
-
       h1 {
         font-size: clamp(2.8rem, 4vw, 5rem);
         line-height: 1.05;
         margin: 22px 0 18px;
         letter-spacing: -0.05em;
       }
-
       .gradient-text {
         background: linear-gradient(135deg, #dbe7ff 10%, var(--primary-2) 50%, #9ad7ff 100%);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
       }
-
       .lead {
         max-width: 620px;
         color: var(--muted);
@@ -159,20 +141,17 @@
         line-height: 1.8;
         margin-bottom: 30px;
       }
-
       .hero-actions {
         display: flex;
         flex-wrap: wrap;
         gap: 14px;
         margin-bottom: 30px;
       }
-
       .mini-stats {
         display: flex;
         flex-wrap: wrap;
         gap: 18px;
       }
-
       .mini-stats .item {
         min-width: 120px;
         padding: 14px 16px;
@@ -180,13 +159,11 @@
         border-radius: 18px;
         background: rgba(255,255,255,0.02);
       }
-
       .mini-stats strong {
         display: block;
         font-size: 1.4rem;
         margin-bottom: 4px;
       }
-
       .mini-stats span {
         color: var(--muted);
         font-size: 0.8rem;
@@ -200,7 +177,6 @@
         background: linear-gradient(180deg, rgba(17, 29, 40, 0.95), rgba(11, 18, 28, 0.8));
         box-shadow: var(--shadow);
       }
-
       .profile-card::before {
         content: "";
         position: absolute;
@@ -209,7 +185,6 @@
         border: 1px solid rgba(255,255,255,0.06);
         pointer-events: none;
       }
-
       .mock-window {
         position: relative;
         background: linear-gradient(180deg, #0b1725, #0e1d2c);
@@ -217,7 +192,6 @@
         overflow: hidden;
         border: 1px solid rgba(255,255,255,0.06);
       }
-
       .window-bar {
         display: flex;
         align-items: center;
@@ -226,46 +200,33 @@
         border-bottom: 1px solid rgba(255,255,255,0.06);
         background: rgba(255,255,255,0.02);
       }
-
       .dot {
         width: 10px;
         height: 10px;
         border-radius: 50%;
       }
-
       .dot.red { background: #ff6f7d; }
       .dot.yellow { background: #f7d56b; }
       .dot.green { background: #7ce7b5; }
-
-      .mock-content {
-        padding: 24px;
-      }
-
+      .mock-content { padding: 24px; }
       .preview-box {
         border-radius: 18px;
         border: 1px solid rgba(255,255,255,0.06);
         background: linear-gradient(135deg, rgba(124,156,255,0.12), rgba(142,240,215,0.12));
         padding: 18px;
       }
-
-      .preview-box h3 {
-        margin: 0 0 10px;
-        font-size: 1.05rem;
-      }
-
+      .preview-box h3 { margin: 0 0 10px; font-size: 1.05rem; }
       .preview-box p {
         margin: 0;
         color: var(--muted);
         line-height: 1.7;
       }
-
       .skill-badges {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
         margin-top: 20px;
       }
-
       .skill-badges span {
         padding: 0.55rem 0.8rem;
         border-radius: 999px;
@@ -275,10 +236,7 @@
         color: var(--muted);
       }
 
-      section {
-        padding: 40px 0;
-      }
-
+      section { padding: 40px 0; }
       .section-head {
         display: flex;
         justify-content: space-between;
@@ -286,33 +244,28 @@
         gap: 20px;
         margin-bottom: 28px;
       }
-
       .section-head h2 {
         margin: 0;
         font-size: clamp(2rem, 3vw, 3rem);
         letter-spacing: -0.04em;
       }
-
       .section-head p {
         margin: 0;
         color: var(--muted);
         max-width: 540px;
         line-height: 1.7;
       }
-
       .cards {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 22px;
       }
-
       .card {
         padding: 24px;
         border: 1px solid var(--line);
         border-radius: 22px;
         background: rgba(255,255,255,0.02);
       }
-
       .icon {
         width: 52px;
         height: 52px;
@@ -323,16 +276,191 @@
         font-size: 1.3rem;
         margin-bottom: 18px;
       }
+      .card h3 { margin: 0 0 10px; font-size: 1.15rem; }
+      .card p { margin: 0; color: var(--muted); line-height: 1.8; }
 
-      .card h3 {
-        margin: 0 0 10px;
-        font-size: 1.15rem;
+      .works-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
       }
-
-      .card p {
-        margin: 0;
+      .work-card {
+        background: rgba(12, 18, 28, 0.9);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 24px;
+        overflow: hidden;
+        transition: transform 0.2s ease, border-color 0.2s ease;
+        box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+      }
+      .work-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(124, 156, 255, 0.5);
+      }
+      .work-thumb {
+        height: 220px;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+      }
+      .thumb-voom {
+        background:
+          linear-gradient(135deg, rgba(99, 102, 241, 0.35), rgba(45, 212, 191, 0.28)),
+          linear-gradient(135deg, #0d1727, #121f2d);
+      }
+      .thumb-voom::before {
+        content: "";
+        position: absolute;
+        inset: 18px;
+        border-radius: 18px;
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)),
+          linear-gradient(90deg, rgba(255,255,255,0.07) 0 24%, transparent 24% 100%);
+        border: 1px solid rgba(255,255,255,0.08);
+      }
+      .thumb-voom::after {
+        content: "";
+        position: absolute;
+        left: 34px;
+        right: 34px;
+        bottom: 26px;
+        height: 92px;
+        border-radius: 12px;
+        background: linear-gradient(180deg, rgba(99, 102, 241, 0.4), rgba(45, 212, 191, 0.18));
+        box-shadow: 0 16px 34px rgba(99, 102, 241, 0.18);
+        transform: skewY(-8deg);
+      }
+      .thumb-autotrade {
+        background:
+          linear-gradient(135deg, rgba(52, 211, 153, 0.4), rgba(79, 70, 229, 0.25)),
+          linear-gradient(135deg, #0d1726, #101f2f);
+      }
+      .thumb-autotrade::before {
+        content: "";
+        position: absolute;
+        inset: 18px;
+        border-radius: 18px;
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)),
+          linear-gradient(90deg, rgba(255,255,255,0.07) 0 18%, transparent 18% 100%);
+        border: 1px solid rgba(255,255,255,0.08);
+      }
+      .thumb-autotrade::after {
+        content: "";
+        position: absolute;
+        left: 34px;
+        right: 34px;
+        bottom: 22px;
+        height: 110px;
+        border-radius: 12px;
+        background: linear-gradient(180deg, rgba(52, 211, 153, 0.42), rgba(79, 70, 229, 0.18));
+        box-shadow: 0 18px 35px rgba(52, 211, 153, 0.18);
+        transform: skewY(-9deg);
+      }
+      .thumb-tradepilot {
+        background:
+          linear-gradient(135deg, rgba(30, 204, 143, 0.38), rgba(99, 102, 241, 0.28)),
+          linear-gradient(135deg, #0d1727, #121f2d);
+      }
+      .thumb-tradepilot::before {
+        content: "";
+        position: absolute;
+        inset: 16px;
+        border-radius: 18px;
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)),
+          linear-gradient(90deg, rgba(255,255,255,0.06) 0 18%, transparent 18% 100%);
+        border: 1px solid rgba(255,255,255,0.08);
+      }
+      .thumb-tradepilot::after {
+        content: "";
+        position: absolute;
+        left: 36px;
+        right: 36px;
+        bottom: 28px;
+        height: 100px;
+        border-radius: 12px;
+        background: linear-gradient(180deg, rgba(52, 211, 153, 0.44), rgba(79, 70, 229, 0.2));
+        transform: skewY(-8deg);
+        box-shadow: 0 18px 35px rgba(52, 211, 153, 0.18);
+      }
+      .work-body { padding: 22px 20px 24px; }
+      .tag {
+        display: inline-block;
+        padding: 0.45rem 0.7rem;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.03);
+        color: var(--primary-2);
+        font-size: 0.72rem;
+        letter-spacing: 0.04em;
+        margin-bottom: 12px;
+      }
+      .work-body h3 {
+        margin: 0 0 10px;
+        font-size: 1.2rem;
+      }
+      .work-body p {
+        margin: 0 0 16px;
         color: var(--muted);
         line-height: 1.8;
+      }
+      .work-body a {
+        color: var(--text);
+        font-weight: 700;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        padding-bottom: 2px;
+      }
+
+      .project-detail {
+        padding: 40px 0;
+      }
+      .project-header { margin-bottom: 24px; }
+      .project-header h2 {
+        margin: 12px 0 0;
+        font-size: clamp(2rem, 3vw, 3rem);
+      }
+      .project-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 28px;
+      }
+      .project-info {
+        padding: 26px;
+        border-radius: 22px;
+        border: 1px solid rgba(255,255,255,0.08);
+        background: rgba(255,255,255,0.02);
+      }
+      .project-info h3 {
+        margin-top: 0;
+        font-size: 1.8rem;
+      }
+      .project-info p,
+      .project-info li {
+        color: var(--muted);
+        line-height: 1.8;
+      }
+      .project-info ul {
+        padding-left: 18px;
+        margin: 18px 0 0;
+      }
+      .project-metrics {
+        display: grid;
+        gap: 18px;
+      }
+      .metric {
+        padding: 18px 20px;
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 18px;
+        background: rgba(255,255,255,0.02);
+      }
+      .metric strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 1.5rem;
+        color: var(--green);
+      }
+      .metric span {
+        color: var(--muted);
       }
 
       .cta {
@@ -346,16 +474,11 @@
         justify-content: space-between;
         gap: 20px;
       }
-
       .cta h3 {
         margin: 0 0 8px;
         font-size: clamp(1.5rem, 2vw, 2.1rem);
       }
-
-      .cta p {
-        margin: 0;
-        color: var(--muted);
-      }
+      .cta p { margin: 0; color: var(--muted); }
 
       footer {
         padding: 22px 0 60px;
@@ -367,16 +490,14 @@
         .nav { display: none; }
         .hero-grid,
         .cards,
+        .works-grid,
+        .project-grid,
         .cta {
-          grid-template-columns: 1fr;
           display: grid;
+          grid-template-columns: 1fr;
         }
-        .section-head {
-          display: block;
-        }
-        .section-head p {
-          margin-top: 10px;
-        }
+        .section-head { display: block; }
+        .section-head p { margin-top: 10px; }
       }
     </style>
   </head>
@@ -408,8 +529,8 @@
               สร้างประสบการณ์ดิจิทัลที่ <span class="gradient-text">น่าจดจำ</span>
             </h1>
             <p class="lead">
-              สวัสดีครับ ผม Suwa Pat ชอบออกแบบและพัฒนาเว็บไซต์ที่ใช้งานง่าย
-              มีสไตล์ชัดเจน และตอบโจทย์ทั้งความสวยงามและประสิทธิภาพ
+              สวัสดีครับ ผม Suwa Pat ชอบออกแบบและพัฒนาเว็บไซต์ที่ใช้งานง่าย มีสไตล์ชัดเจน
+              และตอบโจทย์ทั้งด้านความสวยงามและประสิทธิภาพ
             </p>
 
             <div class="hero-actions">
@@ -467,7 +588,7 @@
           <div class="section-head">
             <h2>เกี่ยวกับผม</h2>
             <p>
-              ผมทำงานด้านการออกแบบและพัฒนาเว็บไซต์ โดยเน้นเรื่องความง่ายต่อการใช้งาน
+              ผมทำงานด้านการออกแบบและพัฒนาระบบเว็บไซต์ โดยเน้นเรื่องความง่ายต่อการใช้งาน
               และความสวยงามที่ไม่ทำให้ผู้ใช้รู้สึกหนักใจ
             </p>
           </div>
@@ -496,7 +617,7 @@
               <h3>คำนึงถึงผู้ใช้งาน</h3>
               <p>
                 มุ่งเน้นการสร้างประสบการณ์ที่เข้าใจง่ายและชวนสนใจ
-                จึงเหมาะกับทั้งเว็บไซต์ส่วนตัว ธุรกิจ และโครงการที่ต้องการความน่าเชื่อถือ
+                ทำให้เหมาะกับทั้งเว็บไซต์ส่วนตัว ธุรกิจ และแอปพลิเคชันที่ต้องการความน่าเชื่อถือ
               </p>
             </article>
           </div>
@@ -519,7 +640,7 @@
               <h3>Landing Page</h3>
               <p>
                 ออกแบบหน้าแรกที่ชัดเจน มีจุดเด่นของบริการหรือสินค้า
-                ช่วยดึงความสนใจและเพิ่มโอกาสในการติดต่อ
+                ช่วยดึงความสนใจและเพิ่มโอ��าสในการติดต่อ
               </p>
             </article>
 
@@ -540,6 +661,102 @@
                 หรือหน้าเพจแบบสั่งทำสำหรับโครงการต่าง ๆ
               </p>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio">
+        <div class="container">
+          <div class="section-head">
+            <h2>ผลงานตัวอย่าง</h2>
+            <p>
+              ตัวอย่างงานที่สะท้อนความสามารถในการออกแบบและพัฒนาเว็บไซต์
+              ให้ดูมีเอกลักษณ์และตรงกับความต้องการของผู้ใช้งาน
+            </p>
+          </div>
+
+          <div class="works-grid">
+            <article class="work-card">
+              <div class="work-thumb thumb-voom"></div>
+              <div class="work-body">
+                <span class="tag">Product Dashboard</span>
+                <h3>Voom</h3>
+                <p>
+                  แพลตฟอร์มติดตามประสิทธิภาพการทำงานและข้อมูลเชิงธุรกิจ
+                  ที่ช่วยให้ทีมส���มารถติดตาม KPI การขาย การใช้งาน
+                  และผลลัพธ์ทางธุรกิจได้อย่างชัดเจน
+                </p>
+                <a href="#">ดูรายละเอียด</a>
+              </div>
+            </article>
+
+            <article class="work-card">
+              <div class="work-thumb thumb-autotrade"></div>
+              <div class="work-body">
+                <span class="tag">Automation System</span>
+                <h3>AutoTrade</h3>
+                <p>
+                  ระบบออโต้เทรดที่ช่วยวิเคราะห์ตลาดและจัดการคำสั่งซื้อ
+                  แบบอัตโนมัติ ผู้ใช้งานสามารถติดตามผลกำไร
+                  และประสิทธิภาพของกลยุทธ์ได้แบบเรียลไทม์
+                </p>
+                <a href="#">ดูรายละเอียด</a>
+              </div>
+            </article>
+
+            <article class="work-card">
+              <div class="work-thumb thumb-tradepilot"></div>
+              <div class="work-body">
+                <span class="tag">Trading Platform</span>
+                <h3>TradePilot</h3>
+                <p>
+                  แพลตฟอร์มติดตามการเทรดและวิเคราะห์สัญญาณซื้อขาย
+                  ที่ช่วยให้ผู้ใช้งานสามารถดูสถานะการเทรดและประสิทธิภาพ
+                  ของกลยุทธ์ได้แบบเรียลไทม์
+                </p>
+                <a href="#">ดูรายละเอียด</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-detail">
+        <div class="container">
+          <div class="project-header">
+            <span class="tag">โครงการที่ 1</span>
+            <h2>Voom</h2>
+          </div>
+
+          <div class="project-grid">
+            <div class="project-info">
+              <h3>Performance Analytics Dashboard</h3>
+              <p>
+                Voom เป็นระบบแดชบอร์ดสำหรับติดตามข้อมูลเชิงธุรกิจและประสิทธิภาพการทำงาน
+                โดยมีการแสดง KPI ที่สำคัญและการวิเคราะห์ผลลัพธ์แบบง่ายต่อการอ่าน
+                เพื่อให้ทีมสามารถตัดสินใจและวางแผนได้เร็วขึ้น
+              </p>
+              <ul>
+                <li>แสดง KPI และข้อมูลสำคัญแบบชัดเจน</li>
+                <li>ออกแบบให้การอ่านข้อมูลสะดวกและมีสไตล์มืออาชีพ</li>
+                <li>เหมาะสำหรับการแสดงผลบนหน้าตรวจสอบธุรกิจและทีมงาน</li>
+              </ul>
+            </div>
+
+            <div class="project-metrics">
+              <div class="metric">
+                <strong>KPI</strong>
+                <span>Business Insight</span>
+              </div>
+              <div class="metric">
+                <strong>Track</strong>
+                <span>Growth Monitoring</span>
+              </div>
+              <div class="metric">
+                <strong>UX</strong>
+                <span>Clear Decision Design</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
