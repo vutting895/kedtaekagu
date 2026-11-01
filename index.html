@@ -3,22 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>kedtaekagu | Portfolio</title>
+    <title>VoomSystem Nova | Business Intelligence</title>
     <style>
       :root {
         --bg: #07111f;
         --bg-soft: #0d1b2a;
-        --panel: rgba(18, 31, 47, 0.9);
-        --panel-strong: #122235;
+        --panel: rgba(17, 29, 40, 0.9);
+        --card: rgba(255,255,255,0.02);
         --primary: #7c9cff;
         --primary-2: #8ef0d7;
         --primary-3: #9dd8ff;
-        --text: #ebf3ff;
-        --muted: #a9bbd1;
-        --line: rgba(255,255,255,0.08);
-        --shadow: 0 20px 50px rgba(17, 30, 45, 0.45);
-        --green: #7ef0c8;
         --purple: #8b7dff;
+        --green: #7ef0c8;
+        --text: #ebf3ff;
+        --muted: #9fb6ce;
+        --line: rgba(255,255,255,0.08);
+        --shadow: 0 22px 60px rgba(12, 18, 28, 0.48);
       }
 
       * { box-sizing: border-box; }
@@ -28,12 +28,13 @@
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         background:
           radial-gradient(circle at top left, rgba(124,156,255,0.18), transparent 30%),
-          radial-gradient(circle at bottom right, rgba(142,240,215,0.12), transparent 35%),
+          radial-gradient(circle at bottom right, rgba(45,212,191,0.14), transparent 36%),
           var(--bg);
         color: var(--text);
       }
       a { color: inherit; text-decoration: none; }
       img { max-width: 100%; display: block; }
+
       .container {
         width: min(1120px, calc(100% - 32px));
         margin: 0 auto;
@@ -42,24 +43,27 @@
       .topbar {
         position: sticky;
         top: 0;
-        z-index: 10;
-        backdrop-filter: blur(14px);
-        background: rgba(7, 17, 31, 0.72);
+        z-index: 20;
+        background: rgba(7, 17, 31, 0.75);
+        backdrop-filter: blur(12px);
         border-bottom: 1px solid var(--line);
       }
+
       .topbar-inner {
         display: flex;
-        align-items: center;
         justify-content: space-between;
-        min-height: 72px;
+        align-items: center;
+        min-height: 74px;
       }
+
       .brand {
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        font-weight: 700;
+        font-weight: 800;
         letter-spacing: 0.04em;
       }
+
       .brand-mark {
         width: 38px;
         height: 38px;
@@ -67,18 +71,20 @@
         place-items: center;
         border-radius: 12px;
         background: linear-gradient(135deg, var(--primary), var(--primary-2));
-        color: #06111b;
-        font-size: 1.1rem;
+        color: #07121d;
         box-shadow: var(--shadow);
+        font-size: 1.1rem;
       }
+
       .nav {
         display: flex;
         align-items: center;
-        gap: 22px;
+        gap: 24px;
         color: var(--muted);
         font-size: 0.95rem;
       }
       .nav a:hover { color: var(--text); }
+
       .btn {
         display: inline-flex;
         align-items: center;
@@ -88,13 +94,13 @@
         border-radius: 999px;
         border: 1px solid transparent;
         font-weight: 700;
-        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        transition: transform 0.2s ease, border-color 0.2s ease;
       }
       .btn:hover { transform: translateY(-2px); }
       .btn-primary {
         background: linear-gradient(135deg, var(--primary), var(--purple));
-        color: #09131c;
-        box-shadow: 0 12px 28px rgba(124,156,255,0.35);
+        color: #06121b;
+        box-shadow: 0 12px 28px rgba(124,156,255,0.3);
       }
       .btn-secondary {
         background: rgba(255,255,255,0.02);
@@ -102,96 +108,110 @@
         color: var(--text);
       }
 
-      .hero { padding: 72px 0 42px; }
+      .hero {
+        padding: 80px 0 36px;
+      }
+
       .hero-grid {
         display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
+        grid-template-columns: 1.08fr 0.92fr;
         gap: 48px;
         align-items: center;
       }
+
       .eyebrow {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        padding: 0.5rem 0.85rem;
+        padding: 0.52rem 0.82rem;
         border-radius: 999px;
-        border: 1px solid var(--line);
         background: rgba(255,255,255,0.02);
+        border: 1px solid var(--line);
         color: var(--primary-2);
-        font-size: 0.82rem;
-        letter-spacing: 0.08em;
         text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.76rem;
       }
+
       h1 {
-        font-size: clamp(2.8rem, 4vw, 5rem);
-        line-height: 1.05;
+        font-size: clamp(2.8rem, 5vw, 5.2rem);
+        letter-spacing: -0.06em;
+        line-height: 1.04;
         margin: 22px 0 18px;
-        letter-spacing: -0.05em;
       }
+
       .gradient-text {
-        background: linear-gradient(135deg, #dbe7ff 10%, var(--primary-2) 50%, #9ad7ff 100%);
+        background: linear-gradient(135deg, #dceaff 10%, var(--primary-2) 55%, var(--primary-3) 100%);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
       }
+
       .lead {
         max-width: 620px;
         color: var(--muted);
         font-size: 1.06rem;
         line-height: 1.8;
-        margin-bottom: 30px;
+        margin-bottom: 28px;
       }
+
       .hero-actions {
         display: flex;
         flex-wrap: wrap;
         gap: 14px;
-        margin-bottom: 30px;
+        margin-bottom: 32px;
       }
-      .mini-stats {
+
+      .stats {
         display: flex;
         flex-wrap: wrap;
         gap: 18px;
       }
-      .mini-stats .item {
+
+      .stats .item {
         min-width: 120px;
         padding: 14px 16px;
-        border: 1px solid var(--line);
         border-radius: 18px;
+        border: 1px solid var(--line);
         background: rgba(255,255,255,0.02);
       }
-      .mini-stats strong {
+
+      .stats strong {
         display: block;
         font-size: 1.4rem;
         margin-bottom: 4px;
       }
-      .mini-stats span {
-        color: var(--muted);
+
+      .stats span {
         font-size: 0.8rem;
+        color: var(--muted);
       }
 
-      .profile-card {
+      .dashboard-panel {
         position: relative;
-        padding: 26px;
+        padding: 28px;
         border: 1px solid var(--line);
         border-radius: 28px;
         background: linear-gradient(180deg, rgba(17, 29, 40, 0.95), rgba(11, 18, 28, 0.8));
         box-shadow: var(--shadow);
       }
-      .profile-card::before {
+      .dashboard-panel::before {
         content: "";
         position: absolute;
         inset: 18px;
-        border-radius: 22px;
         border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 22px;
         pointer-events: none;
       }
-      .mock-window {
+
+      .window {
         position: relative;
-        background: linear-gradient(180deg, #0b1725, #0e1d2c);
-        border-radius: 24px;
-        overflow: hidden;
+        background: linear-gradient(180deg, #0a1524, #0d1c2b);
         border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 22px;
+        overflow: hidden;
       }
+
       .window-bar {
         display: flex;
         align-items: center;
@@ -200,6 +220,7 @@
         border-bottom: 1px solid rgba(255,255,255,0.06);
         background: rgba(255,255,255,0.02);
       }
+
       .dot {
         width: 10px;
         height: 10px;
@@ -208,113 +229,186 @@
       .dot.red { background: #ff6f7d; }
       .dot.yellow { background: #f7d56b; }
       .dot.green { background: #7ce7b5; }
-      .mock-content { padding: 24px; }
-      .preview-box {
+
+      .window-body {
+        padding: 20px;
+      }
+
+      .chart-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .mini-card {
         border-radius: 18px;
-        border: 1px solid rgba(255,255,255,0.06);
-        background: linear-gradient(135deg, rgba(124,156,255,0.12), rgba(142,240,215,0.12));
-        padding: 18px;
+        border: 1px solid rgba(255,255,255,0.05);
+        background: rgba(255,255,255,0.02);
+        padding: 16px;
       }
-      .preview-box h3 { margin: 0 0 10px; font-size: 1.05rem; }
-      .preview-box p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.7;
-      }
-      .skill-badges {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 20px;
-      }
-      .skill-badges span {
-        padding: 0.55rem 0.8rem;
-        border-radius: 999px;
-        background: rgba(255,255,255,0.04);
-        border: 1px solid var(--line);
+
+      .mini-card h4 {
+        margin: 0 0 10px;
         font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
         color: var(--muted);
       }
 
+      .mini-total {
+        font-size: 1.9rem;
+        font-weight: 800;
+      }
+
+      .bars {
+        display: flex;
+        align-items: end;
+        gap: 10px;
+        height: 130px;
+        margin-top: 12px;
+      }
+
+      .bars span {
+        display: block;
+        flex: 1;
+        border-radius: 10px 10px 0 0;
+        background: linear-gradient(180deg, var(--green), var(--primary));
+        opacity: 0.9;
+      }
+
+      .bars span:nth-child(1) { height: 42%; }
+      .bars span:nth-child(2) { height: 58%; }
+      .bars span:nth-child(3) { height: 76%; }
+      .bars span:nth-child(4) { height: 90%; }
+      .bars span:nth-child(5) { height: 68%; }
+      .bars span:nth-child(6) { height: 100%; }
+
+      .bottom-panel {
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 18px;
+        background: linear-gradient(135deg, rgba(124,156,255,0.1), rgba(45,212,191,0.08));
+        padding: 16px;
+      }
+
+      .bottom-panel h4 {
+        margin: 0 0 8px;
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .tag-list span {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.45rem 0.8rem;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.75rem;
+      }
+
       section { padding: 40px 0; }
+
       .section-head {
         display: flex;
         justify-content: space-between;
         align-items: end;
-        gap: 20px;
+        gap: 18px;
         margin-bottom: 28px;
       }
+
       .section-head h2 {
         margin: 0;
         font-size: clamp(2rem, 3vw, 3rem);
         letter-spacing: -0.04em;
       }
+
       .section-head p {
+        max-width: 540px;
         margin: 0;
         color: var(--muted);
-        max-width: 540px;
         line-height: 1.7;
       }
+
       .cards {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 22px;
       }
+
       .card {
         padding: 24px;
-        border: 1px solid var(--line);
         border-radius: 22px;
-        background: rgba(255,255,255,0.02);
+        border: 1px solid var(--line);
+        background: var(--card);
       }
+
       .icon {
         width: 52px;
         height: 52px;
         display: grid;
         place-items: center;
         border-radius: 16px;
-        background: linear-gradient(135deg, rgba(124,156,255,0.18), rgba(142,240,215,0.18));
-        font-size: 1.3rem;
+        background: linear-gradient(135deg, rgba(124,156,255,0.18), rgba(45,212,191,0.18));
+        font-size: 1.25rem;
         margin-bottom: 18px;
       }
-      .card h3 { margin: 0 0 10px; font-size: 1.15rem; }
-      .card p { margin: 0; color: var(--muted); line-height: 1.8; }
+
+      .card h3 {
+        margin: 0 0 10px;
+        font-size: 1.15rem;
+      }
+
+      .card p {
+        margin: 0;
+        line-height: 1.8;
+        color: var(--muted);
+      }
 
       .works-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 22px;
       }
+
       .work-card {
-        background: rgba(12, 18, 28, 0.9);
         border: 1px solid rgba(255,255,255,0.08);
         border-radius: 24px;
         overflow: hidden;
-        transition: transform 0.2s ease, border-color 0.2s ease;
+        background: rgba(12, 18, 28, 0.9);
         box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+        transition: transform 0.2s ease, border-color 0.2s ease;
       }
       .work-card:hover {
         transform: translateY(-8px);
-        border-color: rgba(124, 156, 255, 0.5);
+        border-color: rgba(124,156,255,0.5);
       }
+
       .work-thumb {
         height: 220px;
         position: relative;
-        background-size: cover;
-        background-position: center;
       }
+
       .thumb-voom {
-        background:
-          linear-gradient(135deg, rgba(99, 102, 241, 0.35), rgba(45, 212, 191, 0.28)),
-          linear-gradient(135deg, #0d1727, #121f2d);
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.35), rgba(45, 212, 191, 0.25)),
+                    linear-gradient(135deg, #0d1727, #121f2d);
       }
       .thumb-voom::before {
         content: "";
         position: absolute;
         inset: 18px;
         border-radius: 18px;
-        background:
-          linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)),
-          linear-gradient(90deg, rgba(255,255,255,0.07) 0 24%, transparent 24% 100%);
+        background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)),
+                    linear-gradient(90deg, rgba(255,255,255,0.07) 0 24%, transparent 24% 100%);
         border: 1px solid rgba(255,255,255,0.08);
       }
       .thumb-voom::after {
@@ -325,23 +419,22 @@
         bottom: 26px;
         height: 92px;
         border-radius: 12px;
-        background: linear-gradient(180deg, rgba(99, 102, 241, 0.4), rgba(45, 212, 191, 0.18));
-        box-shadow: 0 16px 34px rgba(99, 102, 241, 0.18);
+        background: linear-gradient(180deg, rgba(99, 102, 241, 0.42), rgba(45, 212, 191, 0.18));
         transform: skewY(-8deg);
+        box-shadow: 0 18px 35px rgba(99, 102, 241, 0.18);
       }
+
       .thumb-autotrade {
-        background:
-          linear-gradient(135deg, rgba(52, 211, 153, 0.4), rgba(79, 70, 229, 0.25)),
-          linear-gradient(135deg, #0d1726, #101f2f);
+        background: linear-gradient(135deg, rgba(52, 211, 153, 0.4), rgba(79, 70, 229, 0.25)),
+                    linear-gradient(135deg, #0d1726, #101f2f);
       }
       .thumb-autotrade::before {
         content: "";
         position: absolute;
         inset: 18px;
         border-radius: 18px;
-        background:
-          linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)),
-          linear-gradient(90deg, rgba(255,255,255,0.07) 0 18%, transparent 18% 100%);
+        background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)),
+                    linear-gradient(90deg, rgba(255,255,255,0.07) 0 18%, transparent 18% 100%);
         border: 1px solid rgba(255,255,255,0.08);
       }
       .thumb-autotrade::after {
@@ -353,22 +446,21 @@
         height: 110px;
         border-radius: 12px;
         background: linear-gradient(180deg, rgba(52, 211, 153, 0.42), rgba(79, 70, 229, 0.18));
-        box-shadow: 0 18px 35px rgba(52, 211, 153, 0.18);
         transform: skewY(-9deg);
+        box-shadow: 0 18px 35px rgba(52, 211, 153, 0.18);
       }
+
       .thumb-tradepilot {
-        background:
-          linear-gradient(135deg, rgba(30, 204, 143, 0.38), rgba(99, 102, 241, 0.28)),
-          linear-gradient(135deg, #0d1727, #121f2d);
+        background: linear-gradient(135deg, rgba(30, 204, 143, 0.38), rgba(99, 102, 241, 0.28)),
+                    linear-gradient(135deg, #0d1727, #121f2d);
       }
       .thumb-tradepilot::before {
         content: "";
         position: absolute;
         inset: 16px;
         border-radius: 18px;
-        background:
-          linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)),
-          linear-gradient(90deg, rgba(255,255,255,0.06) 0 18%, transparent 18% 100%);
+        background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)),
+                    linear-gradient(90deg, rgba(255,255,255,0.06) 0 18%, transparent 18% 100%);
         border: 1px solid rgba(255,255,255,0.08);
       }
       .thumb-tradepilot::after {
@@ -383,7 +475,11 @@
         transform: skewY(-8deg);
         box-shadow: 0 18px 35px rgba(52, 211, 153, 0.18);
       }
-      .work-body { padding: 22px 20px 24px; }
+
+      .work-body {
+        padding: 22px 20px 24px;
+      }
+
       .tag {
         display: inline-block;
         padding: 0.45rem 0.7rem;
@@ -395,15 +491,18 @@
         letter-spacing: 0.04em;
         margin-bottom: 12px;
       }
+
       .work-body h3 {
         margin: 0 0 10px;
         font-size: 1.2rem;
       }
+
       .work-body p {
         margin: 0 0 16px;
         color: var(--muted);
         line-height: 1.8;
       }
+
       .work-body a {
         color: var(--text);
         font-weight: 700;
@@ -414,51 +513,61 @@
       .project-detail {
         padding: 40px 0;
       }
+
       .project-header { margin-bottom: 24px; }
       .project-header h2 {
         margin: 12px 0 0;
         font-size: clamp(2rem, 3vw, 3rem);
       }
+
       .project-grid {
         display: grid;
         grid-template-columns: 1.2fr 0.8fr;
         gap: 28px;
       }
+
       .project-info {
         padding: 26px;
         border-radius: 22px;
         border: 1px solid rgba(255,255,255,0.08);
         background: rgba(255,255,255,0.02);
       }
+
       .project-info h3 {
         margin-top: 0;
         font-size: 1.8rem;
       }
+
       .project-info p,
       .project-info li {
         color: var(--muted);
         line-height: 1.8;
       }
+
       .project-info ul {
         padding-left: 18px;
         margin: 18px 0 0;
       }
+
       .project-metrics {
         display: grid;
         gap: 18px;
       }
+
       .metric {
         padding: 18px 20px;
         border: 1px solid rgba(255,255,255,0.08);
         border-radius: 18px;
         background: rgba(255,255,255,0.02);
       }
+
       .metric strong {
         display: block;
         margin-bottom: 8px;
         font-size: 1.5rem;
         color: var(--green);
       }
+
       .metric span {
         color: var(--muted);
       }
@@ -468,17 +577,22 @@
         padding: 26px;
         border-radius: 26px;
         border: 1px solid var(--line);
-        background: linear-gradient(135deg, rgba(124,156,255,0.1), rgba(142,240,215,0.08));
+        background: linear-gradient(135deg, rgba(124,156,255,0.1), rgba(45,212,191,0.08));
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 20px;
       }
+
       .cta h3 {
         margin: 0 0 8px;
         font-size: clamp(1.5rem, 2vw, 2.1rem);
       }
-      .cta p { margin: 0; color: var(--muted); }
+
+      .cta p {
+        margin: 0;
+        color: var(--muted);
+      }
 
       footer {
         padding: 22px 0 60px;
@@ -496,17 +610,21 @@
           display: grid;
           grid-template-columns: 1fr;
         }
-        .section-head { display: block; }
-        .section-head p { margin-top: 10px; }
+        .section-head {
+          display: block;
+        }
+        .section-head p {
+          margin-top: 10px;
+        }
       }
     </style>
   </head>
   <body>
     <header class="topbar">
       <div class="container topbar-inner">
-        <a href="#" class="brand" aria-label="kedtaekagu home">
-          <span class="brand-mark">K</span>
-          <span>kedtaekagu</span>
+        <a href="#" class="brand" aria-label="VoomSystem Nova home">
+          <span class="brand-mark">V</span>
+          <span>VoomSystem Nova</span>
         </a>
 
         <nav class="nav" aria-label="Main navigation">
@@ -516,7 +634,7 @@
           <a href="#contact">ติดต่อ</a>
         </nav>
 
-        <a href="#contact" class="btn btn-primary">เริ่มต้น</a>
+        <a href="mailto:suwapatsahapong9@gmail.com" class="btn btn-primary">ติดต่อเรา</a>
       </div>
     </header>
 
@@ -524,58 +642,78 @@
       <section class="hero">
         <div class="container hero-grid">
           <div>
-            <span class="eyebrow">Creative Developer</span>
+            <span class="eyebrow">Business Intelligence Platform</span>
             <h1>
-              สร้างประสบการณ์ดิจิทัลที่ <span class="gradient-text">น่าจดจำ</span>
+              Smarter Business.<br>
+              <span class="gradient-text">Faster Decisions.</span>
             </h1>
             <p class="lead">
-              สวัสดีครับ ผม Suwa Pat ชอบออกแบบและพัฒนาเว็บไซต์ที่ใช้งานง่าย มีสไตล์ชัดเจน
-              และตอบโจทย์ทั้งด้านความสวยงามและประสิทธิภาพ
+              ระบบติดตาม KPI ประสิทธิภาพงาน และสถิติธุรกิจแบบเรียลไทม์
+              เพื่อช่วยให้ที��เข้าใจสถานการณ์เชิงลึกและตัดสินใจได้เร็วขึ้น
+              พร้อมกับประสิทธิภาพและประสบการณ์ผู้ใช้ที่ออกแบบมาเพื่อความง่ายในการใช้งาน
             </p>
 
             <div class="hero-actions">
               <a href="#portfolio" class="btn btn-primary">ดูผลงาน</a>
-              <a href="#contact" class="btn btn-secondary">ติดต่อเลย</a>
+              <a href="mailto:suwapatsahapong9@gmail.com" class="btn btn-secondary">ติดต่อเรา</a>
             </div>
 
-            <div class="mini-stats" aria-label="Statistics">
+            <div class="stats" aria-label="Key statistics">
               <div class="item">
-                <strong>3+</strong>
-                <span>ปีประสบการณ์</span>
+                <strong>50K+</strong>
+                <span>Events Tracked</span>
               </div>
               <div class="item">
-                <strong>20+</strong>
-                <span>โปรเจกต์</span>
+                <strong>24/7</strong>
+                <span>Monitoring</span>
               </div>
               <div class="item">
-                <strong>100%</strong>
-                <span>ความใส่ใจ</span>
+                <strong>98%</strong>
+                <span>Uptime</span>
               </div>
             </div>
           </div>
 
-          <div class="profile-card" aria-label="Portfolio preview card">
-            <div class="mock-window">
+          <div class="dashboard-panel" aria-label="dashboard preview">
+            <div class="window">
               <div class="window-bar">
                 <span class="dot red"></span>
                 <span class="dot yellow"></span>
                 <span class="dot green"></span>
               </div>
 
-              <div class="mock-content">
-                <div class="preview-box">
-                  <h3>Portfolio / Landing Page</h3>
-                  <p>
-                    การออกแบบที่คงความเรียบง่าย แต่เต็มไปด้วยรายละเอียดเล็ก ๆ
-                    เพื่อให้ผลงานดูมีเอกลักษณ์ และใช้งานได้จริงบนทุกอุปกรณ์
-                  </p>
+              <div class="window-body">
+                <div class="chart-grid">
+                  <div class="mini-card">
+                    <h4>Revenue</h4>
+                    <div class="mini-total">$84.2K</div>
+                  </div>
+                  <div class="mini-card">
+                    <h4>Conversion</h4>
+                    <div class="mini-total">7.8%</div>
+                  </div>
                 </div>
 
-                <div class="skill-badges">
-                  <span>Web Design</span>
-                  <span>UI/UX</span>
-                  <span>Frontend</span>
-                  <span>Responsive</span>
+                <div class="mini-card">
+                  <h4>Performance</h4>
+                  <div class="bars" aria-label="performance chart">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+
+                <div class="bottom-panel" style="margin-top: 18px;">
+                  <h4>Insights</h4>
+                  <div class="tag-list">
+                    <span>Analytics</span>
+                    <span>KPI</span>
+                    <span>Automation</span>
+                    <span>Monitoring</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -586,38 +724,35 @@
       <section id="about">
         <div class="container">
           <div class="section-head">
-            <h2>เกี่ยวกับผม</h2>
+            <h2>เกี่ยวกับเรา</h2>
             <p>
-              ผมทำงานด้านการออกแบบและพัฒนาระบบเว็บไซต์ โดยเน้นเรื่องความง่ายต่อการใช้งาน
-              และความสวยงามที่ไม่ทำให้ผู้ใช้รู้สึกหนักใจ
+              เราเป็นทีมที่เชี่ยวชาญด้านการออกแบบและพัฒนาระบบที่ช่วยให้ธุรกิจ
+              ทำงานได้รวดเร็วขึ้น ในทุกขั้นตอน ตั้งแต่การวิเคราะห์ข้อมูลไปจนถึงการตัดสินใจเชิงกลยุทธ์
             </p>
           </div>
 
           <div class="cards">
             <article class="card">
               <div class="icon">✦</div>
-              <h3>ออกแบบที่มีเอกลักษณ์</h3>
+              <h3>Design with Purpose</h3>
               <p>
-                ผมออกแบบหน้าเว็บให้มีความโดดเด่นด้วยโทนสี การจัดวางองค์ประกอบ
-                และรายละเอียดที่ช่วยเพิ่มความน่าเชื่อถือให้แบรนด์
+                ออกแบบระบบให้มีความชัดเจนและใช้งานได้จริง โดยคำนึงถึงประสบการณ์ผู้ใช้และความเข้าใจข้อมูลที่ถูกต้อง
               </p>
             </article>
 
             <article class="card">
               <div class="icon">⚡</div>
-              <h3>แสดงผลแบบเร็วและลื่นไหล</h3>
+              <h3>Fast & Reliable</h3>
               <p>
-                ใส่ใจทั้งประสิทธิภาพและประสบการณ์ผู้ใช้ เพื่อให้เว็บไซต์ดูดี
-                แต่ใช้งานได้จริงและเร็วบนทุกอุปกรณ์
+                เน้นประสิทธิภาพการทำงานและความน่าเชื่อถือ เพื่อให้ระบบตอบสนองต่อการใช้งานจริงได้เร็วและเสถียร
               </p>
             </article>
 
             <article class="card">
               <div class="icon">◎</div>
-              <h3>คำนึงถึงผู้ใช้งาน</h3>
+              <h3>Decision Support</h3>
               <p>
-                มุ่งเน้นการสร้างประสบการณ์ที่เข้าใจง่ายและชวนสนใจ
-                ทำให้เหมาะกับทั้งเว็บไซต์ส่วนตัว ธุรกิจ และแอปพลิเคชันที่ต้องการความน่าเชื่อถือ
+                จัดทำข้อมูลเชิงลึกให้เห็นภาพรวมได้ชัดเจน สร้างความมั่นใจในการตัดสินใจให้กับทีมและผู้บริหาร
               </p>
             </article>
           </div>
@@ -627,38 +762,35 @@
       <section id="services">
         <div class="container">
           <div class="section-head">
-            <h2>บริการที่ให้</h2>
+            <h2>บริการของเรา</h2>
             <p>
-              สร้างเว็บไซต์ให้ตรงกับความต้องการของคุณ ตั้งแต่โครงสร้าง การออกแบบ
-              ไปจนถึงการปรับแต่งเพื่อให้มีประสิทธิภาพสูงสุด
+              สร้างระบบและแพลตฟอร์มที่ช่วยขับเคลื่อนธุรกิจให้มีประสิทธิภาพสูงสุด
+              และสะท้อนผลลัพธ์ต่อผู้ใช้งานได้อย่างชัดเจน
             </p>
           </div>
 
           <div class="cards">
             <article class="card">
               <div class="icon">▣</div>
-              <h3>Landing Page</h3>
+              <h3>Dashboard & Analytics</h3>
               <p>
-                ออกแบบหน้าแรกที่ชัดเจน มีจุดเด่นของบริการหรือสินค้า
-                ช่วยดึงความสนใจและเพิ่มโอ��าสในการติดต่อ
+                พัฒนาแดชบอร์ดสำหรับติดตาม KPI, Growth, Conversion และสถิติธุรกิจแบบ real-time
               </p>
             </article>
 
             <article class="card">
               <div class="icon">◫</div>
-              <h3>Portfolio</h3>
+              <h3>Automation Systems</h3>
               <p>
-                สร้างผลงานและข้อมูลส่วนตัวในรูปแบบที่ดูมืออาชีพ
-                เหมาะกับนักออกแบบ นักพัฒนา หรือผู้ประกอบการ
+                ลดงานที่ซ้ำซ้อนด้วยระบบอัตโนมัติที่ช่วยบริหารข้อมูลและการทำงานภายในทีมได้ดีขึ้น
               </p>
             </article>
 
             <article class="card">
               <div class="icon">⌂</div>
-              <h3>Custom Website</h3>
+              <h3>Web Product Design</h3>
               <p>
-                พัฒนาเว็บไซต์ตามความต้องการเฉพาะ เช่น ระบบข้อมูล รายละเอียดสินค้า
-                หรือหน้าเพจแบบสั่งทำสำหรับโครงการต่าง ๆ
+                ออกแบบเว็บไซต์และระบบที่รองรับการใช้งานจริง มีความสวยงาม คล่องตัว และใช้งานง่าย
               </p>
             </article>
           </div>
@@ -668,10 +800,9 @@
       <section id="portfolio">
         <div class="container">
           <div class="section-head">
-            <h2>ผลงานตัวอย่าง</h2>
+            <h2>ผลงานของเรา</h2>
             <p>
-              ตัวอย่างงานที่สะท้อนความสามารถในการออกแบบและพัฒนาเว็บไซต์
-              ให้ดูมีเอกลักษณ์และตรงกับความต้องการของผู้ใช้งาน
+              ระบบและแพลตฟอร์มที่ช่วยให้ธุรกิจทำงานได้เร็วขึ้นและติดตามผลลัพธ์ได้อย่างชัดเจน
             </p>
           </div>
 
@@ -679,12 +810,11 @@
             <article class="work-card">
               <div class="work-thumb thumb-voom"></div>
               <div class="work-body">
-                <span class="tag">Product Dashboard</span>
-                <h3>Voom</h3>
+                <span class="tag">Business Intelligence</span>
+                <h3>VoomSystem Nova</h3>
                 <p>
-                  แพลตฟอร์มติดตามประสิทธิภาพการทำงานและข้อมูลเชิงธุรกิจ
-                  ที่ช่วยให้ทีมส���มารถติดตาม KPI การขาย การใช้งาน
-                  และผลลัพธ์ทางธุรกิจได้อย่างชัดเจน
+                  แพลตฟอร์มติดตาม KPI และประสิทธิภาพงานของทีม
+                  ให้เห็นภาพรวมธุรกิจแบบเรียลไทม์
                 </p>
                 <a href="#">ดูรายละเอียด</a>
               </div>
@@ -693,12 +823,11 @@
             <article class="work-card">
               <div class="work-thumb thumb-autotrade"></div>
               <div class="work-body">
-                <span class="tag">Automation System</span>
+                <span class="tag">Automation</span>
                 <h3>AutoTrade</h3>
                 <p>
-                  ระบบออโต้เทรดที่ช่วยวิเคราะห์ตลาดและจัดการคำสั่งซื้อ
-                  แบบอัตโนมัติ ผู้ใช้งานสามารถติดตามผลกำไร
-                  และประสิทธิภาพของกลยุทธ์ได้แบบเรียลไทม์
+                  ระบบออโต้เทรดและการติดตามผลกำไรแบบทันที
+                  พร้อมแนวทางการจัดการประสิทธิภาพของกลยุทธ์
                 </p>
                 <a href="#">ดูรายละเอียด</a>
               </div>
@@ -707,12 +836,11 @@
             <article class="work-card">
               <div class="work-thumb thumb-tradepilot"></div>
               <div class="work-body">
-                <span class="tag">Trading Platform</span>
+                <span class="tag">Trading Analytics</span>
                 <h3>TradePilot</h3>
                 <p>
-                  แพลตฟอร์มติดตามการเทรดและวิเคราะห์สัญญาณซื้อขาย
-                  ที่ช่วยให้ผู้ใช้งานสามารถดูสถานะการเทรดและประสิทธิภาพ
-                  ของกลยุทธ์ได้แบบเรียลไทม์
+                  พื้นที่วิเคราะห์สัญญาณการเทรดและประสิทธิภาพกลยุทธ์
+                  เพื่อให้เห็นแนวโน้มและผลตอบแทนแบบชัดเจน
                 </p>
                 <a href="#">ดูรายละเอียด</a>
               </div>
@@ -724,22 +852,22 @@
       <section class="project-detail">
         <div class="container">
           <div class="project-header">
-            <span class="tag">โครงการที่ 1</span>
-            <h2>Voom</h2>
+            <span class="tag">โครงการหลัก</span>
+            <h2>VoomSystem Nova</h2>
           </div>
 
           <div class="project-grid">
             <div class="project-info">
               <h3>Performance Analytics Dashboard</h3>
               <p>
-                Voom เป็นระบบแดชบอร์ดสำหรับติดตามข้อมูลเชิงธุรกิจและประสิทธิภาพการทำงาน
-                โดยมีการแสดง KPI ที่สำคัญและการวิเคราะห์ผลลัพธ์แบบง่ายต่อการอ่าน
-                เพื่อให้ทีมสามารถตัดสินใจและวางแผนได้เร็วขึ้น
+                VoomSystem Nova เป็นระบบสำหรับติดตามข้อมูลเชิงธุรกิจและประสิทธิภาพการทำงานของทีม
+                โดยมีการแสดง KPI สำคัญและผลลัพธ์แบบเรียลไทม์ เพื่อให้ผู้บริหารและทีมงานเห็นภาพรวม
+                ของการดำเนินงานได้ชัดเจนและสามารถตัดสินใจได้เร็วขึ้น
               </p>
               <ul>
-                <li>แสดง KPI และข้อมูลสำคัญแบบชัดเจน</li>
-                <li>ออกแบบให้การอ่านข้อมูลสะดวกและมีสไตล์มืออาชีพ</li>
-                <li>เหมาะสำหรับการแสดงผลบนหน้าตรวจสอบธุรกิจและทีมงาน</li>
+                <li>ติดตาม KPI และสถิติธุรกิจแบบเรียลไทม์</li>
+                <li>ออกแบบความชัดเจนของข้อมูลแต่ละภาคส่วนให้ใช้งานง่าย</li>
+                <li>เหมาะสำหรับทีมงานและผู้บริหารที่ต้องการเห็นภาพรวมธุรกิจจากข้อมูลจริง</li>
               </ul>
             </div>
 
@@ -754,7 +882,7 @@
               </div>
               <div class="metric">
                 <strong>UX</strong>
-                <span>Clear Decision Design</span>
+                <span>Decision Ready Design</span>
               </div>
             </div>
           </div>
@@ -765,17 +893,17 @@
         <div class="container">
           <div class="cta">
             <div>
-              <h3>พร้อมเริ่มต้นโปรเจ็กต์ของคุณไหม?</h3>
-              <p>สร้างเว็บไซต์ที่สวยงาม ไว และใช้งานง่ายร่วมกับผมได้เลย</p>
+              <h3>Ready to build your next growth engine?</h3>
+              <p>ติดต่อเราเพื่อเริ่มต้นระบบที่ช่วยให้ธุรกิจทำงานเร็วขึ้นและเห็นผลลัพธ์ชัดเจนกว่าเดิม</p>
             </div>
-            <a href="mailto:your@email.com" class="btn btn-primary">ติดต่อผม</a>
+            <a href="mailto:suwapatsahapong9@gmail.com" class="btn btn-primary">ติดต่อเรา</a>
           </div>
         </div>
       </section>
     </main>
 
     <footer>
-      <div class="container">© 2026 kedtaekagu — Built with passion.</div>
+      <div class="container">© 2026 VoomSystem Nova — Built with purpose.</div>
     </footer>
   </body>
 </html>
